@@ -49,4 +49,5 @@ public class MyServlet extends HttpServlet {
 		pw.print("Path Info: " + pathInfo + "<br/>");
 		pw.print("Query: " + query);
 	}
+	
 }
