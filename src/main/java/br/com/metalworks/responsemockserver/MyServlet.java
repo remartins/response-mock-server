@@ -50,4 +50,7 @@ public class MyServlet extends HttpServlet {
 		pw.print("Query: " + query);
 	}
 	
+	
+	
+	
 }
