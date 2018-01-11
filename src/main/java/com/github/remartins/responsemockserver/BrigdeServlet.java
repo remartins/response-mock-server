@@ -1,4 +1,4 @@
-package br.com.metalworks.responsemockserver;
+package com.github.remartins.responsemockserver;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Renato Martins
  */
 @WebServlet("/*")
-public class MyServlet extends HttpServlet {
+public class BrigdeServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -5201757584762480416L;
 
@@ -52,5 +52,36 @@ public class MyServlet extends HttpServlet {
 	
 	
 	
-	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// resp.getWriter().write("Howdy at " + new Date() + " - novo");
+
+		// Getting servlet request URL
+		String url = req.getRequestURL().toString();
+
+		// Getting request information without the hostname.
+		String uri = req.getRequestURI();
+
+		// Below we extract information about the request object path
+		// information.
+		String scheme = req.getScheme();
+		String serverName = req.getServerName();
+		int portNumber = req.getServerPort();
+		String contextPath = req.getContextPath();
+		String servletPath = req.getServletPath();
+		String pathInfo = req.getPathInfo();
+		String query = req.getQueryString();
+
+		resp.setContentType("text/html");
+		PrintWriter pw = resp.getWriter();
+		pw.print("Url: " + url + "<br/>");
+		pw.print("Uri: " + uri + "<br/>");
+		pw.print("Scheme: " + scheme + "<br/>");
+		pw.print("Server Name: " + serverName + "<br/>");
+		pw.print("Port: " + portNumber + "<br/>");
+		pw.print("Context Path: " + contextPath + "<br/>");
+		pw.print("Servlet Path: " + servletPath + "<br/>");
+		pw.print("Path Info: " + pathInfo + "<br/>");
+		pw.print("Query: " + query);
+	}
 }

@@ -4,7 +4,7 @@
 	<groupId>br.com.metalworkers</groupId>
 	<artifactId>responsemockserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<packaging>war</packaging>
 
 	<properties>
@@ -36,6 +36,11 @@
 			<groupId>org.jboss.spec.javax.servlet</groupId>
 			<artifactId>jboss-servlet-api_3.1_spec</artifactId>
 			<version>1.0.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.wildfly.swarm</groupId>
+			<artifactId>management</artifactId>
+			<version>${version.wildfly.swarm}</version>
 		</dependency>
 	</dependencies>
 
